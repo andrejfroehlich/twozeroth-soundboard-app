@@ -33,7 +33,7 @@ module.exports = {
 		'react-native/no-unused-styles': 'warn',
 		'react-native/split-platform-components': 'error',
 		'react-native/no-inline-styles': 'off',
-		'react-native/no-color-literals': 'error',
+		'react-native/no-color-literals': 'off',
 		// react hooks
 
 		'react-hooks/exhaustive-deps': [
