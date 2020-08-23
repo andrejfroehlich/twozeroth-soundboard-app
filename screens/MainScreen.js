@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, StatusBar, ActivityIndicator, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView } from 'react-native';
 import Button from '../components/Button';
+
+const SOUNDS = ['ayy', 'joog', 'boog', 'nerds', 'Dunhill', 'mp3', 'exe', 'foog', 'gay'];
 
 export default function MainScreen(props) {
 	console.log('Re-rendering MainScreen!');
@@ -9,7 +11,11 @@ export default function MainScreen(props) {
 		<View style={styles.container}>
 			<StatusBar backgroundColor="black" barStyle="light-content" />
 			<Text style={styles.mainText}>Pick a Sound</Text>
-			<Button />
+			<ScrollView contentContainerStyle={styles.scrollView}>
+				{SOUNDS.map((sound, index) => (
+					<Button key={index} />
+				))}
+			</ScrollView>
 		</View>
 	);
 }
@@ -22,10 +28,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: 'black',
 	},
-	logo: {
-		borderRadius: 150 / 2,
-		height: 150,
-		width: 150,
+	scrollView: {
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		justifyContent: 'center',
 	},
 	mainText: {
 		marginTop: 10,
