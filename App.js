@@ -10,7 +10,11 @@ export default function App() {
 	console.log('Re-rendering whole mf App!');
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="LoadingScreen">
+			<Stack.Navigator
+				screenOptions={{
+					headerShown: false,
+				}}
+				initialRouteName="LoadingScreen">
 				<Stack.Screen name="LoadingScreen" component={LoadingScreen} />
 				<Stack.Screen name="MainScreen" component={MainScreen} />
 			</Stack.Navigator>

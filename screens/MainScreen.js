@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, StatusBar, ActivityIndicator, Image } from 'react-native';
+import Button from '../components/Button';
 
 export default function MainScreen(props) {
 	console.log('Re-rendering MainScreen!');
@@ -7,7 +8,8 @@ export default function MainScreen(props) {
 	return (
 		<View style={styles.container}>
 			<StatusBar backgroundColor="black" barStyle="light-content" />
-			<Text style={styles.loadingtext}>Main screen ayo</Text>
+			<Text style={styles.mainText}>Pick a Sound</Text>
+			<Button />
 		</View>
 	);
 }
@@ -15,7 +17,8 @@ export default function MainScreen(props) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
+		paddingTop: 10,
+		justifyContent: 'flex-start',
 		alignItems: 'center',
 		backgroundColor: 'black',
 	},
@@ -24,13 +27,10 @@ const styles = StyleSheet.create({
 		height: 150,
 		width: 150,
 	},
-	loadingtext: {
+	mainText: {
 		marginTop: 10,
 		fontSize: 25,
 		color: 'white',
 		fontFamily: 'Poppins-Medium',
-	},
-	indicator: {
-		marginTop: 10,
 	},
 });

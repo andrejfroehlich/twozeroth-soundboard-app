@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, StatusBar, ActivityIndicator, Image } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 export default function LoadingScreen(props) {
+	const navigation = props.navigation;
+
+	useEffect(() => {
+		setTimeout(() => {
+			navigation.navigate('MainScreen');
+		}, 1500);
+	}, [navigation]);
+
 	console.log('Re-rendering LoadingScreen!');
 	// <SafeAreaView> statt <View> für Handys mit Notch
 	return (
 		<View style={styles.container}>
 			<StatusBar backgroundColor="black" barStyle="light-content" />
-			<Image style={styles.logo} source={require('../img/logo.jpg')} />
+			<FastImage style={styles.logo} source={require('../img/logo.jpg')} />
 			<Text style={styles.loadingtext}>Twozeroth Soundboard App</Text>
 			<ActivityIndicator style={styles.indicator} color="white" size="large" />
 		</View>
