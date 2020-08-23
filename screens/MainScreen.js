@@ -2,7 +2,19 @@ import React from 'react';
 import { StyleSheet, View, Text, StatusBar, ScrollView } from 'react-native';
 import Button from '../components/Button';
 
-const SOUNDS = ['ayy', 'joog', 'boog', 'nerds', 'Dunhill', 'mp3', 'exe', 'foog', 'gay'];
+const SOUNDS = {
+	Nerds: 'nerds.mp3',
+	Joog: 'joog.mp3',
+	Dunhill: 'dunhill.mp3',
+	Arvnn: 'arvnn.mp3',
+	Behindert: 'behindert.mp3',
+	'Darth Vader': 'vader.mp3',
+	'Lama UH': 'lama.mp3',
+	Uh: 'uh.mp3',
+	'Fuck Basic White Girls': 'psl.mp3',
+};
+const SOUNDS_NAMES = Object.keys(SOUNDS);
+// ['Nerds', 'Joog', ...]
 
 export default function MainScreen(props) {
 	console.log('Re-rendering MainScreen!');
@@ -12,8 +24,8 @@ export default function MainScreen(props) {
 			<StatusBar backgroundColor="black" barStyle="light-content" />
 			<Text style={styles.mainText}>Pick a Sound</Text>
 			<ScrollView contentContainerStyle={styles.scrollView}>
-				{SOUNDS.map((sound, index) => (
-					<Button sound={sound} key={index} />
+				{SOUNDS_NAMES.map((soundName, index) => (
+					<Button soundName={soundName} soundFile={SOUNDS[soundName]} key={index} />
 				))}
 			</ScrollView>
 		</View>
