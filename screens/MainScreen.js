@@ -13,7 +13,7 @@ export default function MainScreen(props) {
 			<Text style={styles.mainText}>Pick a Sound</Text>
 			<ScrollView contentContainerStyle={styles.scrollView}>
 				{SOUNDS.map((sound, index) => (
-					<Button key={index} />
+					<Button sound={sound} key={index} />
 				))}
 			</ScrollView>
 		</View>
