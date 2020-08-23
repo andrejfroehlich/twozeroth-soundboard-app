@@ -11,7 +11,7 @@ const SOUNDS = {
 	'Darth Vader': 'vader.mp3',
 	'Lama UH': 'lama.mp3',
 	Uh: 'uh.mp3',
-	'Fuck Basic White Girls': 'psl.mp3',
+	'F Basic White Girls': 'psl.mp3',
 };
 const SOUNDS_NAMES = Object.keys(SOUNDS);
 // ['Nerds', 'Joog', ...]

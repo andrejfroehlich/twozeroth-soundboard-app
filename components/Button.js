@@ -3,21 +3,19 @@ import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { Player } from '@react-native-community/audio-toolkit';
 
 const BUTTON_SIZE = 100;
-const SOUNDS_BASE_DIRECTORY = '../sound/';
 
 // https://github.com/zmxv/react-native-sound
 // npm i react-native-touchable-scale
 export default function Button(props) {
 	const [paddingBottom, setPaddingBottom] = useState(5);
 
-	const player = useMemo(() => new Player(props.soundFile), [props.soundFile]);
-
 	const onPressIn = useCallback(() => setPaddingBottom(0), []);
 	const onPressOut = useCallback(() => setPaddingBottom(5), []);
 	const onPress = useCallback(() => {
 		console.log(`play ${props.soundFile}`);
+		const player = new Player(props.soundFile);
 		player.play();
-	}, [props.soundFile, player]);
+	}, [props.soundFile]);
 
 	const style = useMemo(() => [styles.backgroundContainer, { paddingBottom: paddingBottom }], [paddingBottom]);
 
@@ -25,7 +23,9 @@ export default function Button(props) {
 	return (
 		<View style={style}>
 			<TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} onPress={onPress} style={styles.container}>
-				<Text style={styles.text}>{props.soundName}</Text>
+				<Text style={styles.text} numberOfLines={3} ellipsizeMode="tail">
+					{props.soundName}
+				</Text>
 			</TouchableOpacity>
 		</View>
 	);
@@ -53,5 +53,6 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		color: 'black',
 		fontFamily: 'Poppins-Medium',
+		textAlign: 'center',
 	},
 });
