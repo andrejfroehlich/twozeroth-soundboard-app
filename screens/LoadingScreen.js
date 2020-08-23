@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, StatusBar, ActivityIndicator, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ActivityIndicator } from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 export default function LoadingScreen(props) {
