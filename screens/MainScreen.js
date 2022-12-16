@@ -3,15 +3,15 @@ import { StyleSheet, View, Text, StatusBar, ScrollView } from 'react-native';
 import Button from '../components/Button';
 
 const SOUNDS = {
-	Nerds: 'nerds.mp3',
-	Joog: 'joog.mp3',
-	Dunhill: 'dunhill.mp3',
-	Arvnn: 'arvnn.mp3',
-	Behindert: 'behindert.mp3',
-	'Darth Vader': 'vader.mp3',
-	'Lama UH': 'lama.mp3',
-	Uh: 'uh.mp3',
-	'F Basic White Girls': 'psl.mp3',
+	NERDS: 'nerds.mp3',
+	JOOG: 'joog.mp3',
+	DUNHILL: 'dunhill.mp3',
+	ARVNN: 'arvnn.mp3',
+	SOUND: 'sound.mp3',
+	'DARTH VADER': 'vader.mp3',
+	'LAMA UH': 'lama.mp3',
+	UH: 'uh.mp3',
+	'F BASIC WHITE': 'psl.mp3',
 };
 const SOUNDS_NAMES = Object.keys(SOUNDS);
 // ['Nerds', 'Joog', ...]

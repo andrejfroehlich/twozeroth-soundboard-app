@@ -7,7 +7,7 @@ import MainScreen from './screens/MainScreen';
 const Stack = createStackNavigator();
 
 export default function App() {
-	console.log('Re-rendering whole mf App!');
+	console.log('Re-rendering whole App!');
 	return (
 		<NavigationContainer>
 			<Stack.Navigator
